@@ -14,10 +14,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",  # README.md is of type 'markdown'
     author='Eoin Gallen',
     author_email='egallen@sainteunans.com',
-    url='https://github.com/MrGallen/toolbox_public', 
-    project_urls = {                                # Optional
-        "Bug Tracker": "https://github.com/mMrGallen/toolbox_public/issues"
-    },
+    url='https://github.com/MrGallen/firebase-compsci', 
     install_requires=['requests'],                  # list all packages that your package uses
     keywords=["pypi", "firebase-compsci", "tutorial"], #descriptive meta-data
     classifiers=[                                   # https://pypi.org/classifiers
@@ -31,5 +28,5 @@ setuptools.setup(
         'Programming Language :: Python :: 3.9',
     ],
     
-    download_url="https://github.com/mike-huls/toolbox_public/archive/refs/tags/0.0.3.tar.gz",
+    download_url="https://github.com/MrGallen/firebase-compsci/archive/refs/tags/0.0.1.tar.gz",
 )
