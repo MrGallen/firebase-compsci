@@ -1,8 +1,9 @@
 import setuptools
 
 # Reads the content of your README.md into a variable to be used in the setup below
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
+des = long_description
 
 setuptools.setup(
     name='firebase-compsci',                           # should match the package folder
@@ -10,8 +11,8 @@ setuptools.setup(
     version='0.0.1',                                # important for updates
     license='MIT',                                  # should match your chosen license
     description='Computer Science Firebase Package',
-    long_description=long_description,              # loads your README.md
-    long_description_content_type="text/markdown",  # README.md is of type 'markdown'
+    long_description_content_type="text/markdown",
+    long_description=des,              # loads your README.md
     author='Eoin Gallen',
     author_email='egallen@sainteunans.com',
     url='https://github.com/MrGallen/firebase-compsci', 
