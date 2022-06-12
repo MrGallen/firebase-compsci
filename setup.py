@@ -1,22 +1,24 @@
 import setuptools
 
 # Reads the content of your README.md into a variable to be used in the setup below
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-des = long_description
 
 setuptools.setup(
     name='firebase-compsci',                           # should match the package folder
     packages=['firebase-compsci'],                     # should match the package folder
-    version='0.0.1',                                # important for updates
+    version='1.0',                                # important for updates
     license='MIT',                                  # should match your chosen license
     description='Computer Science Firebase Package',
     long_description_content_type="text/markdown",
-    long_description=des,              # loads your README.md
+    #long_description=des,              # loads your README.md
     author='Eoin Gallen',
     author_email='egallen@sainteunans.com',
     url='https://github.com/MrGallen/firebase-compsci', 
-    install_requires=['requests'],                  # list all packages that your package uses
+    install_requires=['requests>=2.19.1',
+        'requests_toolbelt>=0.7.1',
+        'gcloud>=0.18.3',
+        'oauth2client>=4.1.2',
+        'python-jwt>=2.0.1',
+        'pycryptodome>=3.6.4'],                  # list all packages that your package uses
     keywords=["pypi", "firebase-compsci", "tutorial"], #descriptive meta-data
     classifiers=[                                   # https://pypi.org/classifiers
         'Development Status :: 3 - Alpha',
