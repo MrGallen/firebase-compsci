@@ -27,7 +27,7 @@ from compscifirebase import firebase
 firebasedb1 = firebase.FirebaseApplication('DATABASE_URL', None)
 ```
 
-##Getting Started
+## Getting Started
 ------------------
 
 You can fetch any of your data in JSON format by appending '.json' to the end of the URL in which your data resides and, then send an HTTPS request through your browser. Like all other REST specific APIs, Firebase offers a client to update(PATCH, PUT), create(POST), or remove(DELETE) his stored data along with just to fetch it.
@@ -90,7 +90,7 @@ Deleting data is relatively easy compared to other actions. You just set the url
     # John Doe goes away.
 ```
 
-###Authentication
+### Authentication
 ------------------
 
 Authentication in Firebase is nothing but to simply creating a token that conforms to the JWT standarts and, putting it into the querystring with the name **auth**. The library creates that token for you so you never end up struggling with constructing a valid token on your own. If the data has been protected against write/read operations with some security rules, the backend sends an appropriate error message back to the client with the status code **403 Forbidden**.
@@ -119,7 +119,7 @@ Authentication in Firebase is nothing but to simply creating a token that confor
     {'1': 'John Doe', '2': 'Jane Doe'}
 ```
 
-###Concurrency
+### Concurrency
 ------------------
 
 The interface heavily depends on the standart **multiprocessing** library when concurrency comes in. While creating an asynchronous call, an on-demand process pool is created and, the async method is executed by one of the idle process inside the pool. The pool remains alive until the main process dies. So every time you trigger an async call, you always use the same pool. When the method returns, the pool process ships the returning value back to the main process within the callback function provided.
