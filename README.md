@@ -1,25 +1,21 @@
-# Pyrebase4
+# CompSciFirebase
 
-A simple python wrapper for the [Firebase API](https://firebase.google.com).
+A simple python wrapper for the [Firebase API](https://firebase.google.com) based of Pyrebase 4
 
 ## Installation
 
 ```python
-pip install pyrebase4
+pip install compscifirebase
 ```
 
 ## Getting Started
-
-### Python Version
-
-Pyrebase was written for python 3 and will not work correctly with python 2.
 
 ### Add Pyrebase to your application
 
 For use with only user based authentication we can create the following configuration:
 
 ```python
-import pyrebase
+from compscifirebase import pyrebase
 
 config = {
   "apiKey": "apiKey",
@@ -28,14 +24,14 @@ config = {
   "storageBucket": "projectId.appspot.com"
 }
 
-firebase = pyrebase.initialize_app(config)
+firebasedb = pyrebase.initialize_app(config)
 ```
 
 We can optionally add a [service account credential](https://firebase.google.com/docs/server/setup#prerequisites) to our
 configuration that will allow our server to authenticate with Firebase as an admin and disregard any security rules.
 
 ```python
-import pyrebase
+from compscifirebase import pyrebase
 
 config = {
   "apiKey": "apiKey",
@@ -45,7 +41,7 @@ config = {
   "serviceAccount": "path/to/serviceAccountCredentials.json"
 }
 
-firebase = pyrebase.initialize_app(config)
+firebasedb = pyrebase.initialize_app(config)
 ```
 
 Adding a service account will authenticate as an admin by default for all database queries, check out the
@@ -55,11 +51,11 @@ Adding a service account will authenticate as an admin by default for all databa
 
 A Pyrebase app can use multiple Firebase services.
 
-```firebase.auth()``` - [Authentication](#authentication)
+```firebasedb.auth()``` - [Authentication](#authentication)
 
-```firebase.database()``` - [Database](#database)
+```firebasedb.database()``` - [Database](#database)
 
-```firebase.storage()``` - [Storage](#storage)
+```firebasedb.storage()``` - [Storage](#storage)
 
 Check out the documentation for each service for further details.
 
@@ -71,7 +67,7 @@ Each of the following methods accepts a user token: ```get()```, ```push()```, `
 
 ```python
 # Get a reference to the auth service
-auth = firebase.auth()
+auth = firebasedb.auth()
 
 # Log the user in
 user = auth.sign_in_with_email_and_password(email, password)
@@ -80,7 +76,7 @@ user = auth.sign_in_with_email_and_password(email, password)
 user = auth.sign_in_anonymous()
 
 # Get a reference to the database service
-db = firebase.database()
+db = firebasedb.database()
 
 # data to save
 data = {
@@ -157,7 +153,7 @@ auth.delete_user_account(user['idToken'])
 You can build paths to your data by using the ```child()``` method.
 
 ```python
-db = firebase.database()
+db = firebasedb.database()
 db.child("users").child("Morty")
 ```
 
@@ -414,7 +410,7 @@ storage.child("images/example.jpg")
 The put method takes the path to the local file and an optional user token.
 
 ```python
-storage = firebase.storage()
+storage = firebasedb.storage()
 # as admin
 storage.child("images/example.jpg").put("example2.jpg")
 # as user
